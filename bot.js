@@ -1,6 +1,6 @@
 var Discord = require('discord.io');
 var bot = new Discord.Client({
-	token: "<put your token in the quotes>",
+	token: "INSERT_TOKEN_HERE",
 	autorun: true
 });
 bot.on('ready',function() {
@@ -16,18 +16,19 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		if(split[0] == "lootsplitter"){
 			var X = split[1];
 			var Y = split[2];
+			if(Y>X){
+				var y = Y;
+				Y = X;
+				X = y;
+			}
 			var killSplit = X/Y*1.3;
 			var elseSplit = (X-killSplit)/(Y-1);
-			var kiString = "Killer's split: " + killSplit;
-			var elString = "Everyone else: " + elseSplit;
+			var prString = "Killer's split: " + killSplit +"\n" + "Everyone else: " + elseSplit;
 			bot.sendMessage({
 				to: channelID,
-				message: elString
+				message: prString
 			});
-			bot.sendMessage({
-				to: channelID,
-				message: kiString
-			});
+			console.log("Ran loot split command on channel " + channelID + "for user " + user + ".");
 		}
 	}
 });
