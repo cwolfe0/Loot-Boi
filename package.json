@@ -1,0 +1,26 @@
+{
+  "name": "Loot-Boi",
+  "version": "1.0.0",
+  "description": "A discord.io bot for RS loot distribution",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfeman16/Loot-Boi.git"
+  },
+  "keywords": [
+    "todo",
+    "discord"
+  ],
+  "author": "Cory Wolfe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolfeman16/Loot-Boi/issues"
+  },
+  "homepage": "https://github.com/wolfeman16/Loot-Boi#readme",
+  "dependencies": {
+    "discord.io": "^2.5.1"
+  }
+}
