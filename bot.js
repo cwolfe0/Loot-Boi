@@ -1,18 +1,41 @@
-var Discord = require('discord.io');
-var bot = new Discord.Client({
-	token: "INSERT_TOKEN_HERE",
+const Discord = require('discord.io');
+const config = require ("./config.json");
+const bot = new Discord.Client({
+	token: config.token,
 	autorun: true
 });
+
+
 bot.on('ready',function() {
 	console.log(bot.username + " - (" + bot.id+ ") connected.");
 	r9k = 0;
 });
 
 bot.on('message', function(user, userID, channelID, message, event) {
-	//var messageID = rawEvent.d.ID;
 	if(message.substring(0,1) =="!"){
-		var command = message.substring(1);
-		var split = command.split(" ");
+		var msg = message.substring(1);
+		var split = msg.split(" ");
+		var letter = 0;
+		if(split[0] == "sponge"){
+			var prString = "sPoNgE ";
+			for(var i=1;i<split.length;i++){
+				var word = split[i].split("");
+				for(var o=0;o<word.length;o++){
+					if(letter%2==1 && Math.floor((Math.random() * 10) + 1)<=9){
+						word[o].toUpperCase();
+						prString+=word[o].toUpperCase();
+					}else
+					prString+=word[o];
+					letter++;
+				}
+				prString += " ";
+			}
+			prString += " sPoNgE";
+			bot.sendMessage({
+				to: channelID,
+				message: prString
+			});
+		}
 		if(split[0] == "lootsplitter"){
 			var X = split[1];
 			var Y = split[2];
@@ -55,5 +78,4 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		}
 	}
 });
-
 
