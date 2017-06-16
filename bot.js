@@ -17,6 +17,8 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		var split = msg.split(" ");
 		var letter = 0;
 		if(split[0] == "sponge"){
+			msg = msg.toLowerCase();
+			split = msg.split(" ");
 			var prString = "sPoNgE ";
 			for(var i=1;i<split.length;i++){
 				var word = split[i].split("");
