@@ -1,3 +1,5 @@
+var http = require('http');
+var fs = require('fs');
 const Discord = require('discord.io');
 const config = require ("./config.json");
 const bot = new Discord.Client({
@@ -12,7 +14,14 @@ bot.on('ready',function() {
 });
 
 bot.on('message', function(user, userID, channelID, message, event) {
-	if(message.substring(0,1) =="!"){
+	var command = message.substring(0,1);
+	if(command == "[" && message.substring(message.length-1,message.length)){
+		bot.sendMessage({
+			to: channelID,
+			message: "HS Card detected";
+		});
+	}
+	if(command == "!"){
 		var msg = message.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
