@@ -18,7 +18,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
 	if(command == "[" && message.substring(message.length-1,message.length)){
 		bot.sendMessage({
 			to: channelID,
-			message: "HS Card detected";
+			message: "HS Card detected"
 		});
 	}
 	if(command == "!"){
