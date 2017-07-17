@@ -1,5 +1,9 @@
 var http = require('http');
 var fs = require('fs');
+var file = fs.createWriteStream("cards.json");
+var request = http.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.json", function(response) {
+  response.pipe(file);
+});
 const Discord = require('discord.io');
 const config = require ("./config.json");
 const bot = new Discord.Client({
