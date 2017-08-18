@@ -30,7 +30,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		var split = msg.split(" ");
 		var letter = 0;
 		if(split[0] == "weed"){
-			prString = "GayWeed rare peruvian space grass is inbound via white courier owl GayWeed";
+			prString = "GayWeed RareParrot rare peruvian space grass is inbound via white courier owl RareParrot GayWeed";
 			bot.sendMessage({
 				to: channelID,
 				message: prString
