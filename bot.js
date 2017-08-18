@@ -29,6 +29,13 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		var msg = message.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
+		if(split[0] == "weed"){
+			prString = "GayWeed rare peruvian space grass is inbound via white courier owl GayWeed";
+			bot.sendMessage({
+				to: channelID,
+				message: prString
+			});
+		}
 		if(split[0] == "sponge"){
 			msg = msg.toLowerCase();
 			split = msg.split(" ");
