@@ -29,6 +29,13 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		var msg = message.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
+		if(split[0] == "sudo"){
+			var prString = user + " is not in the sudoers file. This incident will be reported."
+			bot.sendMessage({
+				to: channelID,
+				message: prString
+			});
+		}
 		if(split[0] == "weed"){
 			prString = "GayWeed RareParrot rare peruvian space grass is inbound via white courier owl RareParrot GayWeed";
 			bot.sendMessage({
