@@ -1,54 +1,31 @@
-var https = require('https');
-var fs = require('fs');
-var file = fs.createWriteStream("cards.json");
-var request = https.get("https://api.hearthstonejson.com/v1/20022/enUS/cards.json", function(response) {
-  response.pipe(file);
-});
-const Discord = require('discord.io');
+const Discord = require('discord.js');
 const config = require ("./config.json");
-const bot = new Discord.Client({
-	token: config.token,
-	autorun: true
-});
+const bot = new Discord.Client();
 
-
-bot.on('ready',function() {
-	console.log(bot.username + " - (" + bot.id+ ") connected.");
+bot.on('ready',() => {
+	console.log(bot.user + " connected.");
 	r9k = 0;
 });
 
-bot.on('message', function(user, userID, channelID, message, event) {
-	var command = message.substring(0,1);
-	if(command == "[" && message.substring(message.length-1,message.length)){
-		bot.sendMessage({
-			to: channelID,
-			message: "HS Card detected"
-		});
-	}
+bot.on('message', message => {
+	text = message.toString();
+	console.log(message.content);
+	var command = text.substring(0,1);
 	if(command == "!"){
-		var msg = message.substring(1);
+		var msg = text.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
-	/*	if(split[0] == "bee"){
-			var prString = "\script \script1 \script2 \script3 \script4 \script5 \script6"
-			bot.sendMessage({
-				to: channelID,
-				message: prString
-			});
-		}*/
+		if(split[0] == "bee"){
+			var prString = "<a:script:396554367731499008> <a:script1:396554367538561034> <a:script2:396554367487967251> <a:script3:396554366791974922> <a:script4:396554366913609758> <a:script5:396554348148031508>"
+			message.channel.send(prString);
+		}
 		if(split[0] == "sudo"){
 			var prString = user + " is not in the sudoers file. This incident will be reported."
-			bot.sendMessage({
-				to: channelID,
-				message: prString
-			});
+			message.channel.send(prString);
 		}
 		if(split[0] == "weed"){
 			prString = "GayWeed RareParrot rare peruvian space grass is inbound via white courier owl RareParrot GayWeed";
-			bot.sendMessage({
-				to: channelID,
-				message: prString
-			});
+			message.channel.send(prString);
 		}
 		if(split[0] == "sponge"){
 			msg = msg.toLowerCase();
@@ -67,10 +44,8 @@ bot.on('message', function(user, userID, channelID, message, event) {
 				prString += " ";
 			}
 			prString += " sPoNgE";
-			bot.sendMessage({
-				to: channelID,
-				message: prString
-			});
+			message.channel.send(prString);
+			console.log(message.channel+","+prString);
 		}
 		if(split[0] == "lootsplitter"){
 			var X = split[1];
@@ -83,10 +58,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
 			var killSplit = X/Y*1.3;
 			var elseSplit = (X-killSplit)/(Y-1);
 			var prString = "Killer's split: " + killSplit +"\n" + "Everyone else: " + elseSplit;
-			bot.sendMessage({
-				to: channelID,
-				message: prString
-			});
+			message.channel.send(prString);
 			console.log("Ran loot split command on channel " + channelID + "for user " + user + ".");
 		}
 		if(split[0] == "cancer"){
@@ -107,11 +79,9 @@ bot.on('message', function(user, userID, channelID, message, event) {
 				}
 			}
 			}
-			bot.sendMessage({
-				to: channelID,
-				message: prString
-			});
+			message.channel.send(prString);
 		}
 	}
 });
 
+bot.login(config.token);

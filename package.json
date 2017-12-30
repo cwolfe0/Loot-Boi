@@ -1,7 +1,7 @@
 {
   "name": "Loot-Boi",
   "version": "1.0.0",
-  "description": "A discord.io bot for RS loot distribution",
+  "description": "A discord.js bot for general junk.",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/wolfeman16/Loot-Boi#readme",
   "dependencies": {
-    "discord.io": "^2.5.1"
+    "discord.js": "^11.2.1"
   }
 }
