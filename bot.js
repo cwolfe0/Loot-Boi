@@ -29,13 +29,13 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		var msg = message.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
-		if(split[0] == "bee"){
+	/*	if(split[0] == "bee"){
 			var prString = "\script \script1 \script2 \script3 \script4 \script5 \script6"
 			bot.sendMessage({
 				to: channelID,
 				message: prString
 			});
-		}
+		}*/
 		if(split[0] == "sudo"){
 			var prString = user + " is not in the sudoers file. This incident will be reported."
 			bot.sendMessage({
