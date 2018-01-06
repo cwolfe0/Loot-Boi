@@ -10,6 +10,12 @@ bot.on('ready',() => {
 bot.on('message', message => {
 	text = message.toString();
 	console.log(message.content);
+	if(message.bot == 1 && lmtime != null){
+		tdelta = lmtime-message.createdTimestamp;
+		if(tdelta>5000)
+			message.channel.send("slow bot");
+	}
+	lmtime = message.createdTimestamp;
 	var command = text.substring(0,1);
 	if(command == "!"){
 		var msg = text.substring(1);
