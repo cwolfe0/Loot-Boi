@@ -9,7 +9,7 @@ bot.on('ready',() => {
 
 bot.on('message', message => {
 	text = message.toString();
-	console.log(message.content);
+	console.log(message.createdTimestamp);
 	if(message.bot == 1 && lmtime != null){
 		tdelta = lmtime-message.createdTimestamp;
 		if(tdelta>5000)
