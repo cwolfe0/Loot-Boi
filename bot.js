@@ -36,7 +36,7 @@ bot.on('message', message => {
 		if(split[0] == "sponge"){
 			msg = msg.toLowerCase();
 			split = msg.split(" ");
-			var prString = "sPoNgE ";
+			var prString = "<:sPoNgE:400083994298941450>";
 			for(var i=1;i<split.length;i++){
 				var word = split[i].split("");
 				for(var o=0;o<word.length;o++){
