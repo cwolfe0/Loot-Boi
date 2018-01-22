@@ -21,6 +21,9 @@ bot.on('message', message => {
 		var msg = text.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
+		if(split[0] == "spin"){
+			lastmessage = channel.fetchMessages({ around:message });
+			lastmessage.react("<a:thonkspin:405110890325868576>");
 		if(split[0] == "bee"){
 			var prString = "<a:script:396554367731499008> <a:script1:396554367538561034> <a:script2:396554367487967251> <a:script3:396554366791974922> <a:script4:396554366913609758> <a:script5:396554348148031508>"
 			message.channel.send(prString);
