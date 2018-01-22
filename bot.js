@@ -52,7 +52,7 @@ bot.on('message', message => {
 				}
 				prString += " ";
 			}
-			prString += " sPoNgE";
+			prString += "sPoNgE";
 			message.channel.send(prString);
 			console.log(message.channel+","+prString);
 		}

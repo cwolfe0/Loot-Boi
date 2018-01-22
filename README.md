@@ -15,4 +15,4 @@ Everyone else = Remaining/(Y-1)
 Other new commands are:
 1.`!sponge This is a sentence` - > `sPoNgE THiS iS a SentEnCe  sPoNgE` (With [BetterDiscord](https://betterdiscord.net/home/) you get ![sPoNgE image](https://cdn.frankerfacez.com/emoticon/183492/1) as an emote instead of the text. 
 
-2.`!cancer hello `:green_apple: -> :green_apple:h:green_apple:e:green_apple:l:green_apple:l:green_apple:o:green_apple:This also works with BetterDiscord and will place spaces between emotes and letters to make sure the emotes show up if you're using a BD emote instead of one from Discord/a Server.
+2.`!cancer hello `:green_apple: -> :green_apple:h:green_apple:e:green_apple:l:green_apple:l:green_apple:o:green_apple:This also works with BetterDiscord and will place spaces between emotes and letters to make sure the emotes show up if you're using a BD emote instead of one from Discord/a server.  The bot should be able to use emotes from external services provided you have nitro or if you use the correct format for external emotes for bots.
