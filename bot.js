@@ -48,7 +48,7 @@ bot.on('message', message => {
 		if(split[0] == "sponge"){
 			msg = msg.toLowerCase();
 			split = msg.split(" ");
-			var prString = "sPoNgE ";
+			var prString = "<:sPoNgE:400083851059396610> ";
 			for(var i=1;i<split.length;i++){
 				var word = split[i].split("");
 				for(var o=0;o<word.length;o++){
@@ -61,8 +61,10 @@ bot.on('message', message => {
 				}
 				prString += " ";
 			}
-			prString += "sPoNgE";
+			prString += "<:sPoNgE:400083851059396610>";
 			message.channel.send(prString);
+			message.delete()
+			 .catch(console.error);
 			console.log(message.channel+","+prString);
 		}
 		if(split[0] == "lootsplitter"){
