@@ -8,6 +8,10 @@ bot.on('ready',() => {
 	r9k = 0;
 });
 
+bot.on('uncaughtException', (err) => {
+	console.log("Uncaught exception for some reason");
+});
+
 bot.on('message', message => {
 	text = message.toString();
 	console.log(message.createdTimestamp);
