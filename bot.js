@@ -26,6 +26,12 @@ bot.on('message', message => {
 		var msg = text.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
+		if(split[0] == "post-bogo"){
+			for(var a = [],i = 0; i < parseInt(split[1]);i++){
+				a[i] = Math.random();
+			}
+			message.channel.send(a + "\nSort these bitch.");
+		}
 		if(split[0] == "spin"){
 			let promise = message.channel.fetchMessages({ before:message.id, limit:1 }) 
 			 promise.then(messages =>{
