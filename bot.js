@@ -113,7 +113,7 @@ bot.on('message', message => {
 		}
 	}
 	if(message.mentions.everyone){
-		message.react(message.guild.emojis.get('435576109502038016'))
+		message.react(":angery:435576109502038016")
 		.then(console.log)
 		.catch(console.error);
 	}
