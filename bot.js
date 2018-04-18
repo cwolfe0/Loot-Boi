@@ -34,14 +34,10 @@ bot.on('message', message => {
 		}
 		if(split[0] == "how2feel" || split[0] == "h2f"){
 			emoji = bot.emojis;
-			if(emoji == undefined)
-				message.channel.send("Add some emoji to your server and I'll tell you how to feel.");
-			if(emoji != undefined){
 			emojiList = emoji.array();
 			console.log("Fetched " + emojiList.length + " emojis.");
-			n = Math.floor(Math.random() * emojiList.length);
-			message.channel.send("You should feel <:" + emojiList[n].name + ":" + emojiList[n].id + ">");
-			}
+			reply = emoji.random().toString();
+			message.channel.send("You should feel " + reply);
 		}
 		if(split[0] == "spin"){
 			let promise = message.channel.fetchMessages({ before:message.id, limit:1 }) 
