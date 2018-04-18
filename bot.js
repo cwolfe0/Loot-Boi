@@ -32,6 +32,17 @@ bot.on('message', message => {
 			}
 			message.channel.send(a + "\nSort these bitch.");
 		}
+		if(split[0] == "how2feel" || split[0] == "h2f"){
+			emoji = message.guild.emojis;
+			if(emoji == undefined)
+				message.channel.send("Add some emoji to your server and I'll tell you how to feel.");
+			if(emoji != undefined){
+			emojiList = emoji.array();
+			console.log("Fetched " + emojiList.length + " emojis.");
+			n = Math.floor(Math.random() * emojiList.length);
+			message.channel.send("You should feel <:" + emojiList[n].name + ":" + emojiList[n].id + ">");
+			}
+		}
 		if(split[0] == "spin"){
 			let promise = message.channel.fetchMessages({ before:message.id, limit:1 }) 
 			 promise.then(messages =>{
