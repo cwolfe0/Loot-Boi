@@ -33,7 +33,7 @@ bot.on('message', message => {
 			message.channel.send(a + "\nSort these bitch.");
 		}
 		if(split[0] == "how2feel" || split[0] == "h2f"){
-			emoji = bot.emojis;
+			emoji = bot.emojis; // change to message.guild.emojis for only that server
 			emojiList = emoji.array();
 			console.log("Fetched " + emojiList.length + " emojis.");
 			reply = emoji.random().toString();
