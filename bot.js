@@ -33,7 +33,7 @@ bot.on('message', message => {
 			message.channel.send(a + "\nSort these bitch.");
 		}
 		if(split[0] == "how2feel" || split[0] == "h2f"){
-			emoji = message.guild.emojis;
+			emoji = bot.emojis;
 			if(emoji == undefined)
 				message.channel.send("Add some emoji to your server and I'll tell you how to feel.");
 			if(emoji != undefined){
