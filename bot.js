@@ -26,11 +26,33 @@ bot.on('message', message => {
 		var msg = text.substring(1);
 		var split = msg.split(" ");
 		var letter = 0;
+
+		/*The general format for a command is as follows
+		 *
+		 * if(split[0] == "command"){
+		 * 	do whatever;
+		 * }
+		 */
+		if(split[0] == "schedule"){
+			allowedChannel = '<#127605610114973696>';
+			if(message.channel == allowedChannel){
+				let promise = message.channel.fetchPinnedMessages()
+				promise.then(pinned =>{
+					for(i = 0;i<pinned.array().length;i++){
+						if(pinned.array()[i].author == message.author){
+							pinned.array()[i].unpin();
+						}
+					}
+				});
+				promise.catch(console.error);
+				message.pin();
+		}
+		}
 		if(split[0] == "post-bogo"){
 			for(var a = [],i = 0; i < parseInt(split[1]);i++){
 				a[i] = Math.random();
 			}
-			message.channel.send(a + "\nSort these bitch.");
+			message.reply(a + "\nSort these bitch.");
 		}
 		if(split[0] == "how2feel" || split[0] == "h2f"){
 			emoji = bot.emojis; // change to message.guild.emojis for only that server
