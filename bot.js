@@ -77,7 +77,7 @@ bot.on('message', message => {
 			message.channel.send(prString);
 		}
 		if(split[0] == "sudo"){
-			var prString = user + " is not in the sudoers file. This incident will be reported."
+			var prString = message.author + " is not in the sudoers file. This incident will be reported."
 			message.channel.send(prString);
 		}
 		if(split[0] == "weed"){
