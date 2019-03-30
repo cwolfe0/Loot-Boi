@@ -34,7 +34,7 @@ bot.on('message', message => {
 		 * }
 		 */
 		if(split[0] == "racism"){
-			message.channel.send("Your message is strikingly uncritical of white supremacist behavior towards colonized people.  Please be better.")
+			message.channel.send("Your message is strikingly uncritical of white supremacist behavior towards colonized people.")
 		}
 		if(split[0] == "schedule"){
 			allowedChannel = '<#127605610114973696>';
